@@ -1,0 +1,90 @@
+---
+title: "SlideDeck1"
+author: "Bob McQuaid"
+date: "`r Sys.Date()`"
+output:
+  html_document: default
+  word_document: default
+---
+
+## Today's agenda
+
+### Ensure the following is installed and working:
+
+1.  Git
+    a.  Configure [Git](https://git-scm.com/)
+    b.  Excellent summary of Git, Github, and RStudio interaction ([Computing for the Social Sciences](https://cfss.uchicago.edu/setup/what-is-git/))
+2.  Github
+    a.  Register for a GitHub account
+    b.  Install GitHub Desktop
+    c.  Connect Github Desktop to your GitHub account
+3.  R and RStudio
+4.  Connect RStudio and GitHub
+    a.  Create a GitHub personal access token ([PAT](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token))
+        i.  Create PAT using the [`usethis` package](https://rfortherestofus.com/2021/02/how-to-use-git-github-with-r/#:~:text=create%20a%20personal%20access%20token%20(pat)%20on%20github))
+        ii. Store Personal Access Token (use the [`gitcreds` package](https://rfortherestofus.com/2021/02/how-to-use-git-github-with-r/#:~:text=store%20personal%20access%20token%20to%20connect%20rstudio%20and%20github))
+    b.  Connect *existing* local RStudio Project to GitHub repo ([RStudio First](https://rfortherestofus.com/2021/02/how-to-use-git-github-with-r/#:~:text=two%20of%20them.-,rstudio%20first,-Sometimes%20you%20already))
+    c.  Connect *existing* GitHub repo to *new* Rstudio project ([GitHub First](https://rfortherestofus.com/2021/02/how-to-use-git-github-with-r/#:~:text=current%20RStudio%20project.-,github%20first,-The%20most%20straightforward))
+5.  Some Git concepts
+    a.  repository --- project folder
+    b.  remote --- computer with the repository on it
+    c.  clone --- get the the rep from the remote for the first time
+    d.  pull --- get commits from a remote
+    e.  push --- send commits to a remote
+    f.  commit --- snapshot of your repo
+    g.  checkout --- access a previous snapshot/version
+    h.  branches --- a movable label that points to a commit
+    i.  merge --- combining to branches
+    j.  fork --- full copy of a repository
+6.  Git Vocabulary (particularly [focused on RStudio](https://rviews.rstudio.com/2020/04/23/10-commands-to-get-started-with-git/))
+    -   **Stage**: (git add)
+        -   Prepare a file (or files) for a commit. All files in the staging area during a specific commit will be associated with the same commit and commit message.
+    -   **Commit**: (git commit)
+        -   Save the staged version of the file(s) in the repo. You *commit* the changes to the repo.
+    -   **Push**: (red PUSH button in Git Tab)
+        -   Upload changes from your local repository to the remote repository. Note this will *only* push the most recent changes.
+    -   **Pull**: (blue PULL button in Git Tab)
+        -   Download the most recent changes from the remote repository to your local repository. Note this will *only* pull the most recent changes.
+7.  Project Collaboration (note: this is a typical *professional* flow)
+    a.  Create a repo
+    b.  Add collaborators
+    c.  Always pull before starting new work
+    d.  Always commit all changes before finishing your work
+    e.  File Issues to track work that should be completed
+        i.  Include assignments for individuals
+        ii. Tag issues to help with organization
+    f.  Use branches to create new changes
+    g.  Submit pull requests when the work on a given branch is complete, and link it to the corresponding issue
+        i.  Tag collaborators to review the pull request
+        ii. Use GitHub's review resources to comment on individual lines of code, as needed
+        iii. Use the PR to have conversations about the changes and any revisions needed
+    h.  Merge pull requests and delete the remote branch
+        i.  Move back to your local, checkout the main branch, pull the merged changes, delete the local branch
+8.  Organize an R project in R studio (find more in depth discussion [here](https://chrisvoncsefalvay.com/2018/08/09/structuring-r-projects/), [here](https://kkulma.github.io/2018-03-18-Prime-Hints-for-Running-a-data-project-in-R/))
+    a.  Create a new project (using version control, include a .gitignore file)
+    b.  add a README.md file (more on this later)
+    c.  Add subfolders to your project
+        -   config
+        -   data
+            -   processed
+
+            -   raw
+        -   output
+        -   src
+        -   temp
+    d.  Generally, categorize scripts in three ways
+        1.  Script for loading packages and custom functions
+        2.  Script for cleaning up and preparing data for analysis
+        3.  Different scripts for different analyses completed in the project
+            -   Naming convention-start with a number to order the scripts (Example: 100_VisualizeRawData.r)
+        4.  Each script should have:(some good stuff [here](https://www.r-bloggers.com/2018/09/r-code-best-practices/))
+            a.  descriptive headers
+            b.  libraries loaded at the top
+            c.  sections as needed
+            d.  clear comments, logical and efficient code
+            e.  use functions if snippet appears more than three times
+                i.  sometimes aggregate many functions in one functions script file
+9.  Project: Cleaning Data and Core Functions
+    1.  Start in class, get as far as we can, finish as an assignment.
+
+    2.  Article: [Cleaning data and Core Functions](https://epirhandbook.com/en/cleaning-data-and-core-functions.html)
